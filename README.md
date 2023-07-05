@@ -1,7 +1,16 @@
 # API Routes
+1. First, create your venv with pipenv command utilizing the pipfile which contains related libraries.
+    > pipenv install
+2. Make migrations
+   > python manage.py makemigrations
+   > python manage.py migrate
+2. The database is not populated, you may do it, first create an admin with the following command.
+    > python manage.py createsuperuser
+3. You may use either admin panel or related endpoints listed below with suitable payloads in order to populate the rest of the database; such as, menu-items,  users, and assigning user roles such as manager or delivery_crew, and customer. All users should be authenticated.
+4. Run the server.
+   > python manage.py runserver.
 
-Capabilities
-
+Capabilities can be listed as follows:
 1. The admin and manager can assign previously added users to the manager group with a *username* payload using POST method.
     - /api/groups/manager/users  
 2. The admin and manager can access the manager group users with GET method, list all users.
@@ -48,9 +57,7 @@ Capabilities
     - /api/orders
 21. Customers can browse their own orders with GET method.
     - /api/orders
-
-API Endpoints:
-
+A summary of API Endpoints:
 + User Registration and Token Generation endpoints, exploiting djoser library.
     - /api/users
     - /api/users/users/me/  
