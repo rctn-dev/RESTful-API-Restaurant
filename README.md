@@ -1,6 +1,3 @@
-# RESTful-API-Restaurant
-RESTful API - Django Rest Framework
-
 # API Routes
 
 Capabilities
